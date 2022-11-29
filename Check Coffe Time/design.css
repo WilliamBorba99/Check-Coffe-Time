@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    content: "";
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 166px);
+    padding-bottom: 10px;
+}
+
+.form {
+    content: "";
+    clear: both;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-9 {
+    width: 100%;
+    padding-left: 20px;
+}
+
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+/* Header */
+.header {
+    background-image: url(imagens/café.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #c56a36;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.footer {
+    color: #ffffff;
+
+}
+
+/* Icon */
+.gg-instagram {
+    margin-left: 20px;
+    color: #ffffff;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px
+}
+
+.gg-instagram::after,
+.gg-instagram::before {
+    content: "";
+    /* display: block; */
+    box-sizing: border-box;
+    position: absolute
+}
+
+.gg-instagram::after {
+    border: 2px solid;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    top: 3px
+}
+
+.gg-instagram::before {
+    border-radius: 3px;
+    width: 2px;
+    height: 2px;
+    background: currentColor;
+    right: 1px;
+    top: 1px
+}
+
+/* Header Page*/
+.check {
+    text-shadow: 2px 2px #c56a36;
+}
+
+.check {
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+}
+
+/* Menu */
+.menu {
+    width: 100%;
+    margin-top: 0px;
+}
+
+.menu ul {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+    margin-left: 2px;
+    margin-top: 1px;
+    position: relative;
+}
+
+.menu ul li {
+    background-color: #c56a36;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+
+.menu ul li:hover {
+    background-color: #ee9866;
+}
+
+.menu ul ul {
+    display: none;
+    position: absolute;
+}
+
+.menu ul li:hover>ul {
+    display: block;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Alinhamento Titulo da Página */
+h1 {
+    text-align: center;
+}
+
+/* Receitas */
+table {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+img {
+    height: 150px;
+    padding: 2px;
+}
+
+.a_receita {
+    color: #c56a36;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Centralizar imagem da receita */
+.img_receita {
+    text-align: center;
+}
+
+/* Animação imagem */
+@keyframes animation {
+    from {
+        width: 0%;
+        opacity: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.img_receita {
+    animation-name: animation;
+    animation-duration: 8s;
+}
+
+/* Formulário */
+.formulario {
+    box-sizing: border-box;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ee9866;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Estrelas do Formulário */
+.estrelas input[type=radio] {
+    display: none;
+}
+
+.estrelas label i.fa:before {
+    content: '\f005';
+    color: #FC0;
+}
+
+.estrelas input[type=radio]:checked~label i.fa:before {
+    color: #CCC;
+}
+
+/* Botão de confirmação */
+.button {
+    background-color: #c56a36;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+.button:hover {
+    background-color: #ee9866;
+}
+
+/* Vai limpar as informações dos campos preenchidos */
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Layout responsivo - quando a tela tiver menos de 600px de largura, faça as duas colunas empilharem uma em cima da outra, em vez de uma ao lado da outra */
+@media screen and (max-width: 600px) {
+
+    .col-25,
+    .col-75,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
